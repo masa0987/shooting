@@ -5,14 +5,10 @@
 // TODO: 雲の位置を左から右に動かす。見えなくなったら左端に戻す。(B)
 // TODO: 砲台を青い壁に沿って上下に動かす。(C)
 // TODO: 弾のスピードを速くし、弾が画面右端を通り越したら再度発射可能にする。(D)
-// TODO: スコアのサイズを大きくする。(E)
-// TODO: スコアを100点ずつ加算するようにし、5桁の表示に変える。(F)
-// TODO: PlayBGM()関数を使って、BGMを再生する。(G)(HW16A104 杉本　雅弥)
-// TODO: PlaySound()関数を使って、弾の発射時とターゲットに当たった時にSEを再生する。(H)(HW16A104　杉本　雅弥)
 // TODO: スコアのサイズを大きくする。(E)　(実装：HW16A044 表 朋樹)
 // TODO: スコアを100点ずつ加算するようにし、5桁の表示に変える。(F)　(実装：HW16A044 表 朋樹)
-// TODO: PlayBGM()関数を使って、BGMを再生する。(G)
-// TODO: PlaySound()関数を使って、弾の発射時とターゲットに当たった時にSEを再生する。(H)
+// TODO: PlayBGM()関数を使って、BGMを再生する。(G)(HW16A104 杉本　雅弥)
+// TODO: PlaySound()関数を使って、弾の発射時とターゲットに当たった時にSEを再生する。(H)(HW16A104　杉本　雅弥)
 
 
 Vector2 cloudPos;       //!< 雲の位置
@@ -50,7 +46,6 @@ void Update()
         Rect bulletRect(bulletPos, Vector2(32, 20));
         if (targetRect.Overlaps(bulletRect)) {
             PlaySound("se_maoudamashii_explosion06.mp3");
-            score += 1;         // スコアの加算
             score += 100;         // スコアの加算
             bulletPos.x = -999; // 弾を発射可能な状態に戻す
         }
