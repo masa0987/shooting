@@ -47,11 +47,6 @@ void Update()
             bulletPos.x = -999; // 弾を発射可能な状態に戻す
         }
     }
-    //雲の移動
-    cloudPos.x += 1;
-    if (cloudPos.x >= 480){
-        cloudPos.x = -480;
-    }
     
     // 背景の描画
     Clear(Color::cyan);
@@ -59,6 +54,11 @@ void Update()
 
     // 雲の描画
     DrawImage("cloud1.png", cloudPos);
+    //雲の移動
+    cloudPos.x += 1;
+    if (cloudPos.x >= 480){
+        cloudPos.x = -480;
+    }
 
     // 弾の描画
     if (bulletPos.x > -999) {
